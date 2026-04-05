@@ -1,0 +1,23 @@
+# ==============================
+# vManage Configuration
+# ==============================
+
+system
+ host-name vmanage
+ system-ip 1.1.1.3
+ site-id 100
+ organization-name "Lab-SDWAN"
+ vbond 10.10.10.1
+ clock timezone UTC
+
+# WAN transport
+vpn 0
+ interface eth0
+  ip address 10.10.10.3/24
+  no shutdown
+
+# Management access
+vpn 512
+ interface eth1
+  ip address 192.168.100.3/24
+  no shutdown

@@ -1,0 +1,27 @@
+# ==============================
+# vSmart Configuration
+# ==============================
+
+system
+ host-name vsmart
+ system-ip 1.1.1.2
+ site-id 100
+ organization-name "Lab-SDWAN"
+ vbond 10.10.10.1
+ clock timezone UTC
+
+# Transport VPN (WAN)
+vpn 0
+ interface eth0
+  ip address 10.10.10.2/24
+  no shutdown
+
+# Management VPN
+vpn 512
+ interface eth1
+  ip address 192.168.100.2/24
+  no shutdown
+
+# Control connections
+omp
+ no shutdown
